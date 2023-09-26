@@ -1,0 +1,85 @@
+проверка node версий - node -v
+проверка npm версий - npm -v
+
+Команда для установки всех пакетов:
+npm i gulp gulp-sass sass gulp-file-include gulp-clean gulp-server-livereload gulp-sourcemaps gulp-plumber gulp-notify gulp-group-css-media-queries --save-dev
+
+npm install --global gulp-cli 
+npm i webpack-stream style-loader css-loader --save-dev
+npm i gulp-babel @babel/core @babel/preset-env
+npm i gulp-imagemin@7 --save-dev
+npm i gulp-changed --save-dev
+npm i gulp-sass-glob -–save-dev
+npm i gulp-autoprefixer --save-dev 
+npm i gulp-csso --save-dev
+npm i htmlclean --save-dev
+npm i gulp-webp gulp-webp-html gulp-webp-css --save-dev
+npm i gulp-changed
+
+
+Gulp умеет только создавать и организовывать задачи
+gulp.task() – определить задачу
+gulp.src() – взять исходные файлы
+pipe.() – “закинуть в трубу” внутри которой применить плагин для обработки файлов
+gulp.dest() – сохранить получивший результат
+gulp.parallel() – запустить несколько задач параллельно (одновременно)
+gulp.series() – запустить несколько задач последовательно
+gulp.watch() – следить за файлами
+
+
+gulp – собственно gulp
+gulp-sass – Сборка sass / scss
+sass – Необходим для сборки Sass / Scss
+gulp-file-include – Подключение файлов друг в друга. HTML include
+gulp-clean – Удаление Файлов
+gulp-server-livereload – Сервер с автообновлением страницы
+gulp-sourcemaps – Исходные карты для CSS
+gulp-plumber – Фикс ошибок при сборке
+gulp-notify – Нотификации
+gulp-group-css-media-queries – группировка css медиа запросов
+
+глобальная установка gulp
+npm install --global gulp-cli 
+всегда запускаем VSCODE от администратора
+
+Гитхаб
+git status
+
+подключение npm пакета(например кадендарь)
+npm i air-datepicker -S
+
+Сборка JS webpack
+npm i webpack-stream style-loader css-loader --save-dev
+
+Babel
+npm i gulp-babel @babel/core @babel/preset-env
+
+Сжатие изображений
+npm i gulp-imagemin@7 --save-dev
+
+Ускорение тасков
+npm i gulp-changed --save-dev
+
+Автоподключение SCSS
+npm i gulp-sass-glob -–save-dev
+
+Автопрефиксы
+npm i gulp-autoprefixer --save-dev 
+
+Минификация css (gulp-csso)
+npm i gulp-csso --save-dev
+
+Сжатие HTML HTMLCLEAN
+npm i htmlclean --save-dev
+
+Генерация изображений GULP-WEBP
+npm i gulp-webp gulp-webp-html gulp-webp-css --save-dev
+
+Правка для GULP-CHANGED
+npm i gulp-changed
+
+Поключение готовых страниц HTML
+@@include('blocks/swiper.html')
+
+Подключение готовых страниц SCSS
+@import "./base/reset";

@@ -1,0 +1,260 @@
+.footer {
+	padding: 100px 0px 0px 0px;
+
+	&__container {}
+
+	&__top {}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: 30px;
+		margin: 0px 0px 80px 0px;
+	}
+
+	&__column {
+		flex: 0 1 25%;
+		min-width: 190px;
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		border: 1px solid #C4C4C4;
+		padding: 0px 25px;
+	}
+
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		row-gap: 30px;
+	}
+
+	&__item {
+		flex: 0 1 23.333%;
+		display: flex;
+
+		&:before {
+			display: block;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-bottom: 2px solid rgba(196, 196, 196, 0.5);
+			border-right: 2px solid rgba(196, 196, 196, 0.5);
+		}
+
+		&_version {}
+
+		&_copyright {
+			flex: 0 1 30%;
+		}
+
+		&_politic {}
+
+		&_copyright {}
+
+		&_version {
+			position: relative;
+		}
+	}
+}
+
+.column-footer {
+	display: flex;
+	flex-direction: column;
+
+	&__title {
+		color: #000;
+		font-family: Gilroy;
+		font-size: 21px;
+		font-weight: 700;
+		line-height: 150%;
+
+		&:not(:last-child) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__text {
+		color: #000;
+		font-family: Gilroy;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 150%;
+
+		&:not(:last-child) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+
+	&__description {
+		color: #000;
+		font-family: Gilroy;
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 150%;
+		letter-spacing: 0.55px;
+		text-transform: uppercase;
+
+		&:not(:last-child) {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__body {}
+
+	&__value {
+		color: #000;
+		font-family: Gilroy;
+		font-size: 21px;
+		font-weight: 700;
+		line-height: 150%;
+		margin: 0px 0px 15px 0px;
+	}
+}
+
+.how {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #FFF;
+	font-family: Gilroy;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.7px;
+	text-transform: uppercase;
+	padding: 15px 25px;
+	background: #00868A;
+	transition: all 0.3s ease-in 0s;
+
+	&:hover {
+		background: #05aeb4;
+	}
+}
+
+.item-footer {
+
+	&__politic {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #000;
+		text-align: center;
+		font-family: Gilroy;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+		text-decoration-line: underline;
+	}
+
+	&_copyright {}
+
+	&_version {
+		padding: 0px 30px;
+		display: flex;
+		align-items: center;
+		min-height: 91px;
+	}
+}
+
+.version-impaired {
+	display: flex;
+	align-items: center;
+	color: #FFF;
+	font-family: Gilroy;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: #00868A;
+	padding: 12px 15px 12px 51px;
+	position: relative;
+	transition: all 0.3s ease-in 0s;
+
+	&:hover {
+		background: #05aeb4;
+	}
+
+	&::before {
+		position: absolute;
+		content: "";
+		display: block;
+		top: 25%;
+		left: 15px;
+		width: 26px;
+		height: 26px;
+		background: url("../img/eye-icon.svg") no-repeat;
+	}
+}
+
+.socials {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0px 28px 0px 0px;
+
+	&__icon {
+		position: relative;
+		min-height: 91px;
+		display: flex;
+
+		&:before {
+			display: block;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-left: 2px solid rgba(196, 196, 196, 0.5);
+		}
+
+		&:not(:first-child) {
+			margin: 0px 0px 0px 50px;
+		}
+	}
+
+	&__image {
+		flex: 0 1 24px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: "";
+			display: block;
+			top: 0;
+			left: 0px;
+			width: 10px;
+			height: 100px;
+			background: url("../img/line.png") 100% 100% / cover no-repeat;
+		}
+
+		img {
+			flex: 0 0 24px;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.footer__decor {
+	min-height: 100%;
+
+	&:before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-left: 2px solid rgba(196, 196, 196, 0.5);
+	}
+}
