@@ -18,9 +18,9 @@ const changed = require('gulp-changed'); //для ускорения, не тр�
 //---Удаление папки build--------------------------------------------------------------------
 
 gulp.task('clean:dev', function (done) {
-	if (fs.existsSync('./build/')) {
+	if (fs.existsSync('./root/')) {
 		return gulp
-			.src('./build/', { read: false })
+			.src('./root/', { read: false })
 			.pipe(clean({ force: true }));
 	}
 	done();
@@ -52,7 +52,7 @@ gulp.task('html:dev', function () {
 			.pipe(changed('./build/', { hasChanged: changed.compareContents })) //hasChanged также автообновляет вторичные страницы
 			.pipe(plumber(plumberNotify('HTML')))
 			.pipe(fileInclude(fileIncludeSetting)) // обработали
-			.pipe(gulp.dest('./build/')) //сохранили в dist
+			.pipe(gulp.dest('./root/')) //сохранили в dist
 	);
 });
 
@@ -64,13 +64,13 @@ gulp.task('sass:dev', function () {
 	return (
 		gulp
 			.src('./src/scss/*.scss')
-			.pipe(changed('./build/css/')) 
+			.pipe(changed('./root/css/')) 
 			.pipe(plumber(plumberNotify('SCSS')))
 			.pipe(sourceMaps.init()) //инициализируем map
 			.pipe(sassGlob()) //автоподключение SCSS
 			.pipe(sass()) //превращаем в scss
 			.pipe(sourceMaps.write())
-			.pipe(gulp.dest('./build/css/'))
+			.pipe(gulp.dest('./root/css/'))
 	);
 });
 
@@ -81,9 +81,9 @@ gulp.task('sass:dev', function () {
 gulp.task('images:dev', function () {
 	return gulp
 		.src('./src/img/**/*')
-		.pipe(changed('./build/img/'))
+		.pipe(changed('./root/img/'))
 		// .pipe(imagemin({ verbose: true })) //показывает в консоли что оптимизировано и на сколько //в режиме разработки можно отключить
-		.pipe(gulp.dest('./build/img/'));
+		.pipe(gulp.dest('./root/img/'));
 });
 
 //--------------------------------------------------------------------------------------------
@@ -93,22 +93,22 @@ gulp.task('images:dev', function () {
 gulp.task('fonts:dev', function () {
 	return gulp
 		.src('./src/fonts/**/*')
-		.pipe(changed('./build/fonts/'))
-		.pipe(gulp.dest('./build/fonts/'));
+		.pipe(changed('./root/fonts/'))
+		.pipe(gulp.dest('./root/fonts/'));
 });
 
 gulp.task('files:dev', function () {
 	return gulp
 		.src('./src/files/**/*')
-		.pipe(changed('./build/files/'))
-		.pipe(gulp.dest('./build/files/'));
+		.pipe(changed('./root/files/'))
+		.pipe(gulp.dest('./root/files/'));
 });
 
 gulp.task('video:dev', function () {
 	return gulp
 		.src('./src/video/**/*')
-		.pipe(changed('./build/video/'))
-		.pipe(gulp.dest('./build/video/'));
+		.pipe(changed('./root/video/'))
+		.pipe(gulp.dest('./root/video/'));
 });
 
 //--------------------------------------------------------------------------------------------
@@ -118,11 +118,11 @@ gulp.task('video:dev', function () {
 gulp.task('js:dev', function () {
 	return gulp
 		.src('./src/js/*.js')
-		.pipe(changed('./build/js/'))
+		.pipe(changed('./root/js/'))
 		.pipe(plumber(plumberNotify('JS')))
 		// .pipe(babel()) // отключение в режиме разработки, тестирование старых браузеров
 		.pipe(webpack(require('./../webpack.config.js')))
-		.pipe(gulp.dest('./build/js/')); 
+		.pipe(gulp.dest('./root/js/')); 
 });
 
 //------------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ const serverOptions = {
 };
 
 gulp.task('server:dev', function () {
-	return gulp.src('./build/').pipe(server(serverOptions));
+	return gulp.src('./root/').pipe(server(serverOptions));
 });
 
 //------------------------------------------------------------------------------------------
